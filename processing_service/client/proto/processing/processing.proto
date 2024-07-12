@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package processing;
+
+// where the go files will be generated into
+option go_package = "proto/processing";
+
+
+service ProcessingService {
+  rpc ProcessRequest (ProcessRequestMessage) returns (ProcessResponseMessage);
+}
+
+message ProcessRequestMessage {
+  string request_id = 1;
+  string data = 2;
+}
+
+message ProcessResponseMessage {
+  string request_id = 1;
+  string result = 2;
+}
